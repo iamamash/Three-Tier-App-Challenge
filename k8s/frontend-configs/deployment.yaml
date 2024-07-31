@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
+  namespace: workshop
   labels:
     app: frontend-deployment
 spec:
@@ -29,4 +30,4 @@ spec:
         - containerPort: 3000
         env:
           - name: REACT_APP_BACKEND_URL
-            value: "http://backend-service:3500/api/tasks"
+            value: "http://10.100.52.158:3500/api/tasks"
